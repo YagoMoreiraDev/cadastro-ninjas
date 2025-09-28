@@ -13,6 +13,10 @@ public class Ninja {
     private Integer idade;
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "missao_id")
+    private Missao missao;
+
     public Ninja() {
     }
 

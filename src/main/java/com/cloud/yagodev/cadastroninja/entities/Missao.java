@@ -2,6 +2,8 @@ package com.cloud.yagodev.cadastroninja.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_missoes")
 public class Missao {
@@ -11,6 +13,9 @@ public class Missao {
     private Long id;
     private String nome;
     private Character rank;
+
+    @OneToMany(mappedBy = "missao")
+    private List<Ninja> ninjas;
 
     public Missao() {
     }
