@@ -17,6 +17,8 @@ public class Ninja {
     private Long id;
     private String nome;
     private Integer idade;
+
+    @Column(unique = true)
     private String email;
 
     @ManyToOne
