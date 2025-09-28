@@ -1,11 +1,17 @@
 package com.cloud.yagodev.cadastroninja.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Missao {
 
     @Id
@@ -16,32 +22,4 @@ public class Missao {
 
     @OneToMany(mappedBy = "missao")
     private List<Ninja> ninjas;
-
-    public Missao() {
-    }
-
-    public Missao(Long id, String nome, Character rank) {
-        this.nome = nome;
-        this.rank = rank;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Character getRank() {
-        return rank;
-    }
-
-    public void setRank(Character rank) {
-        this.rank = rank;
-    }
 }
